@@ -221,4 +221,4 @@ $(document).on('keypress', function (e) {
   }
 });
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=https://github.com/Guppy-Jung/nav-1/dist/main.82580efc.js.map
+//# sourceMappingURL=https://guppy-jung.github.io/nav-1/dist/main.82580efc.js.map
