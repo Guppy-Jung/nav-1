@@ -1,0 +1,181 @@
+/* css reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  /*a标签默认有样式，需要用此code清理掉*/
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  max-width: 100%; /*限定img最大宽度不能超过容器，从而限制引入图片的宽度*/
+  max-height: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+/* style */
+body {
+  /* border: 1px solid red; */
+  background: #ddd;
+}
+@media (min-width: 500px) {
+  .globalHeader {
+    margin: 60px 0 100px;
+  }
+}
+
+.searchForm {
+  display: flex;
+  justify-content: space-between;
+  /*max-width: 400px; /*不要写固定宽度。pc页面大家都是做固定宽度，不会做自适应*/
+}
+@media (min-width: 500px) {
+  /*使用媒体查询，()中是查询条件，即500px以下不在查询范围内,当查询到设备分辨率宽度为500px时，对.searchForm使用max-width:400px*/
+  .searchForm {
+    max-width: 400px;
+    /*margin: 0 auto; /*上下0，左右auto,实现居中，一般当元素有固定width或者max-width时采用margin:0 auto;来实现水平居中，但是用margin会覆盖掉别的元素的margin*/
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* @media (max-width: 500px) {
+  /*只查询max-width:500px以下的屏幕分辨率宽度。响应式布局就是用@media(){}
+  .searchForm {
+    background: red;
+  }
+} */
+.searchForm > input {
+  width: 100%;
+  margin-right: 10px;
+  height: 40px;
+  padding: 0 10px;
+  border: none;
+  border: 1px solid #ddd;
+  border-radius: 4px; /*input默认有border,需要用border:none去掉默认border样式*/
+}
+.searchForm > button {
+  white-space: nowrap; /*前面的input w:100%会导致button内容被迫换行*/
+  padding: 0 28px;
+  border: none; /*button也是有默认样式的*/
+  border-radius: 4px;
+  background: #0282b9;
+  color: white; /*button里面文字的字体颜色*/
+  font-size: 16px;
+}
+
+.globalMain {
+  max-width: 900px; /*pc页面一般800px*/
+  margin-left: auto;
+  margin-right: auto; /*当一个元素固定width或者给定max-width时，可以用margin来实现在页面中居中*/
+}
+
+.siteList {
+  margin: 20px;
+  /* border: 1px solid #000; */
+  display: flex; /*可去除掉子元素独占一行现象*/
+  flex-wrap: wrap; /*可使子元素换行显示，注意区分white-space:wrap;*/
+  justify-content: space-between;
+  /* border: 1px solid red; */
+}
+@media (min-width: 500px) {
+  .siteList {
+    margin-left: 0;
+    margin-right: -25px;
+    justify-content: flex-start; /*可以覆盖掉viewport width小于500px的justify-content样式*/
+  }
+}
+.siteList > li {
+  /* border: 1px solid blue; */
+  margin-bottom: 10px;
+}
+@media (min-width: 500px) {
+  .siteList > li {
+    /* border: 1px solid blue; */
+    margin-bottom: 10px;
+    margin-right: 25px; /*这里使用margin-right,但是最后一个兄弟元素会有多出来的25px不能被父元素.siteList装下，所以在.siteList上使用-margin，这样不用改变.siteList的width也可以实现布局*/
+  }
+}
+.siteList .site {
+  /* border: 1px solid red; */
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /*实现.site中的元素垂直排列*/
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px 0;
+  position: relative;
+  cursor: pointer; /*当鼠标移入该元素时箭头变成手*/
+}
+.siteList .site > .logo {
+  /*注意中间没有>*/
+  /* border: 1px solid red; */
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center; /*配合display:flex实现居中*/
+  align-items: center; /*垂直居中*/
+  font-size: 64px;
+  text-transform: uppercase; /*在css中用该方法比在js中用.UpperCase()更好的一点是：使用该方法前所新增的元素内容也会被该方法调整*/
+}
+.siteList .site > .link {
+  font-size: 14px;
+  margin-top: 4px;
+}
+.siteList .site > .close {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  display: none; /*一开始该元素不展示*/
+  cursor: default; /*当鼠标移入该元素，显示成默认的箭头形状*/
+}
+.siteList .site:hover > .close {
+  display: block;
+}
+.siteList .addButton {
+  border: 1px solid #ddd;
+  background: #fff;
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0;
+}
+.siteList .addButton .icon {
+  width: 56px;
+  height: 56px;
+}
+.siteList .addButton .text {
+  font-size: 14px;
+  margin-top: 4px;
+}
+.siteList .addButton .icon-wrapper {
+  /* border: 1px solid red; */
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
