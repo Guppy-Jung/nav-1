@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no, viewport-fit=cover">
+    <!-- 抄袭taobao.com手机端的meta-v，可以阻止手机端的页面双指缩放功能 -->
+    <title>前航-前端导航网站</title>
+    <link rel="stylesheet" href="https://github.com/Guppy-Jung/nav-1/dist/style.1f11723b.css">
+</head>
+
+<body>
+    <header class="globalHeader">
+        <form class="searchForm" method="get" action="https://www.baidu.com/s" target="_blank">
+            <input name="wd" type="text">
+            <button type="submit">搜索</button>
+        </form>
+        <!-- 通过一个form表单即可实现input和button元素的功能实现，method表示请求方法；action表示请求网页(只用填到/s路径,_blank表示新标签页打开) 
+        然后在input元素的name属性中写wd（word,表示查询的关键词），button元素的type属性用submit-->
+    </header>
+
+    <main class="globalMain">
+        <ul class="siteList">
+            <!-- <li>
+                <a href="https://www.acfun.cn">
+                    <div class="site">
+                        <div class="logo">A</div>
+                        <div class="link">acfun.cn</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.bilibili.com">
+                    <div class="site">
+                        <div class="logo">
+                            <img src="./bilibili.webp" alt="">
+                        </div>
+                        <div class="link">bilibili.com</div>
+                    </div>
+                </a>
+            </li> -->
+            <!-- <li>
+                <div class="site">
+                    <div class="logo">A</div>
+                    <div class="link">acfun.cn</div>
+                </div>
+            </li> -->
+            <li class="last">
+                <div class="addButton">
+                    <div class="icon-wrapper">
+                        <svg class="icon">
+                            <use xlink:href="#icon-add"></use>
+                        </svg>
+                    </div>
+                    <div class="text">新增网站</div>
+                </div>
+            </li>
+        </ul>
+    </main>
+    <script src="https://at.alicdn.com/t/font_3405617_d97zr8cmkos.js"></script>
+    <!--这是引入icon图标-->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--这是引入jQuery代码-->
+    <script src="https://github.com/Guppy-Jung/nav-1/dist/main.82580efc.js"></script>
+</body>
+
+</html>
