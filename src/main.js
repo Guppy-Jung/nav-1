@@ -82,12 +82,17 @@ window.onbeforeunload = () => {//该APIjs用户在关闭页面前会触发，这
 }
 
 // document.addEventListener()
-$(document).on('keypress', (e) => {
-    // const key = e.key 当变量名与属性名相同，可以简写为
-    const { key } = e
-    for (let i = 0; i <= hashMap.length; i++) {
-        if (hashMap[i].logo.toLowerCase() === key) {
-            window.open(hashMap[i].url)
-        }
-    }
-})
+// $(document).on('keypress', (e) => {
+//     // const key = e.key 当变量名与属性名相同，可以简写为
+//     const { key } = e
+//     for (let i = 0; i <= hashMap.length; i++) {
+//         if (hashMap[i].logo.toLowerCase() === key) {
+//             window.open(hashMap[i].url)
+//         }
+//     }
+// })  该代码有文本框也能接收到keypress事件的bug,删掉了
+
+
+
+
+
