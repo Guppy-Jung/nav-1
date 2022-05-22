@@ -208,17 +208,14 @@ window.onbeforeunload = function () {
 
   window.localStorage.setItem('x', string); //localStorage是全局变量，window可以省略，setItem()接受两个值：key和value，key随便写。x表示存在x里。这句话的意思是：在本地存储中设置一个x,其值为string
 }; // document.addEventListener()
-
-
-$(document).on('keypress', function (e) {
-  // const key = e.key 当变量名与属性名相同，可以简写为
-  var key = e.key;
-
-  for (var i = 0; i <= hashMap.length; i++) {
-    if (hashMap[i].logo.toLowerCase() === key) {
-      window.open(hashMap[i].url);
-    }
-  }
-});
+// $(document).on('keypress', (e) => {
+//     // const key = e.key 当变量名与属性名相同，可以简写为
+//     const { key } = e
+//     for (let i = 0; i <= hashMap.length; i++) {
+//         if (hashMap[i].logo.toLowerCase() === key) {
+//             window.open(hashMap[i].url)
+//         }
+//     }
+// })  该代码有文本框也能接收到keypress事件的bug,删掉了
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.82580efc.js.map
+//# sourceMappingURL=main.4ac2f98e.js.map
